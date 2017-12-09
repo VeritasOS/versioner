@@ -29,5 +29,6 @@ Version reader/writer for popular package managers
 
 #### Development
 
+    git clone https://stash.veritas.com/scm/surf/versioner.git
     cd versioner
     pip install -e .

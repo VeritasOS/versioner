@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Command line interface for crane
+Version reader/writer for popular package managers
 """
 __copyright__ = "Copyright (C) Veritas LLC. All rights reserved."
 
