@@ -28,7 +28,7 @@ setup(
     name='versioner',
     version='0.0.1',
     author='prathamesh.nevagi@veritas.com',
-    description='Version reader/writer for different package managers',
+    description='Version reader/writer for popular package managers',
     long_description=read_md('README.md'),
 
     url='https://stash.veritas.com/projects/surf/repos/versioner',

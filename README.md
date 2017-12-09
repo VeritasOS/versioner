@@ -1,5 +1,5 @@
 ### Versioner
-Version reader/writer for popular package mangers
+Version reader/writer for popular package managers
 
 
 #### Installation
