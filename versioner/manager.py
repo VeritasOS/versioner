@@ -19,3 +19,19 @@ class DEP(TOMLParser):
 
     # Path till version
     VERSION = ["metadata", "version"]
+
+
+class GenericTOML(TOMLParser):
+    # Default config file
+    FILE = ""
+
+    # Path till version
+    VERSION = []
+
+
+class GenericYAML(YAMLParser):
+    # Default config file
+    FILE = ""
+
+    # Path till version
+    VERSION = []

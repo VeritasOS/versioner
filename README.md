@@ -18,7 +18,7 @@ Version reader/writer for popular package managers
 
 - Read version from custom file
 
-        > versioner read npm --file /root/app/version.yaml --version-hierarchy myapp,version
+        > versioner read yaml --file /root/app/version.yaml --key-depth myapp,version
         0.0.2
 
         version.yaml

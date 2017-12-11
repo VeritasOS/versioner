@@ -15,8 +15,8 @@ class Parser(object):
             os.getcwd(), self.FILE)
         return open(path, 'r')
 
-    def _get_version(self, version_hierarchy):
-        return version_hierarchy if version_hierarchy else self.VERSION
+    def _get_version(self, key_depth):
+        return key_depth if key_depth else self.VERSION
 
     def get_version(self, config, path):
         for var in path:
@@ -34,16 +34,16 @@ class Parser(object):
 
 class YAMLParser(Parser):
 
-    def read(self, file, version_hierarchy):
+    def read(self, file, key_depth):
         content = YAML(typ='safe').load(
             self._load_file(file))
         return self.get_version(content,
-            self._get_version(version_hierarchy))
+            self._get_version(key_depth))
 
 
 class TOMLParser(Parser):
 
-    def read(self, file, version_hierarchy):
+    def read(self, file, key_depth):
         content = toml.load(self._load_file(file))
         return self.get_version(content,
-            self._get_version(version_hierarchy))
+            self._get_version(key_depth))

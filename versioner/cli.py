@@ -11,15 +11,15 @@ from .versioner import (
 
 class CommandLine(object):
 
-    def read(self, package_manager, file="", version_hierarchy=[]):
+    def read(self, package_manager, file="", key_depth=[]):
         versioner = Versioner(package_manager)
         try:
-            # TODO: Some how version_hierarchy is string
-            # when only item in version_hierarchy
+            # TODO: Some how key_depth is string
+            # when only item in key_depth
             # something to do with fire
-            if type(version_hierarchy) == str:
-                version_hierarchy = [version_hierarchy]
-            print versioner.read(file, version_hierarchy)
+            if type(key_depth) == str:
+                key_depth = [key_depth]
+            print versioner.read(file, key_depth)
         except Exception, e:
             sys.exit(e)
 
