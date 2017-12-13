@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from .parser import (
-    YAMLParser, TOMLParser
+    YAMLParser, TOMLParser, JSONParser
 )
 
 
-class NPM(YAMLParser):
+class NPM(JSONParser):
     # Default config file
     FILE = "package.json"
 
@@ -30,6 +30,14 @@ class GenericTOML(TOMLParser):
 
 
 class GenericYAML(YAMLParser):
+    # Default config file
+    FILE = ""
+
+    # Path till version
+    VERSION = []
+
+
+class GenericJSON(JSONParser):
     # Default config file
     FILE = ""
 

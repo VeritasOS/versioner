@@ -3,6 +3,7 @@
 
 import sys
 import fire
+import json
 
 from .versioner import (
     Versioner
@@ -19,7 +20,7 @@ class CommandLine(object):
             # something to do with fire
             if type(key_depth) == str:
                 key_depth = [key_depth]
-            sys.stdout.write(versioner.read(file, key_depth))
+            sys.stdout.write(json.dumps(versioner.read(file, key_depth)))
         except Exception, e:
             sys.exit(e)
 

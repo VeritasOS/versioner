@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import json
 from ruamel.yaml import YAML
 import toml
 
@@ -15,7 +16,7 @@ class Parser(object):
             os.getcwd(), self.FILE)
         return open(path, 'r')
 
-    def _get_version(self, key_depth):
+    def _get_key_depth(self, key_depth):
         return key_depth if key_depth else self.VERSION
 
     def get_version(self, config, path):
@@ -32,13 +33,22 @@ class Parser(object):
                 return value
 
 
+class JSONParser(Parser):
+
+    def read(self, file, key_depth):
+        content = json.load(
+            self._load_file(file))
+        return self.get_version(content,
+            self._get_key_depth(key_depth))
+
+
 class YAMLParser(Parser):
 
     def read(self, file, key_depth):
         content = YAML(typ='safe').load(
             self._load_file(file))
         return self.get_version(content,
-            self._get_version(key_depth))
+            self._get_key_depth(key_depth))
 
 
 class TOMLParser(Parser):
@@ -46,4 +56,4 @@ class TOMLParser(Parser):
     def read(self, file, key_depth):
         content = toml.load(self._load_file(file))
         return self.get_version(content,
-            self._get_version(key_depth))
+            self._get_key_depth(key_depth))

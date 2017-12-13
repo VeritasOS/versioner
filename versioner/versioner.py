@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .manager import (
-    NPM, DEP, GenericTOML, GenericYAML
+    NPM, DEP, GenericTOML, GenericYAML, GenericJSON
 )
 
 # Supported list of package managers
@@ -10,6 +10,7 @@ PACKAGE_MANAGERS = {
     'dep': DEP,
     'yaml': GenericYAML,
     'toml': GenericTOML,
+    'json': GenericJSON,
 }
 
 
