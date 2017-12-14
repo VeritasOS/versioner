@@ -31,8 +31,8 @@ setup(
     description='Version reader/writer for popular package managers',
     long_description=read_md('README.md'),
 
-    url='https://stash.veritas.com/projects/surf/repos/versioner',
-    download_url='https://stash.veritas.com/scm/surf/versioner.git',
+    url='https://github.com/VeritasOS/versioner',
+    download_url='https://github.com/VeritasOS/versioner.git',
 
     package_dir={'versioner': 'versioner'},
     packages=find_packages("."),
