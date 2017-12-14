@@ -20,7 +20,10 @@ class CommandLine(object):
             # something to do with fire
             if type(key_depth) == str:
                 key_depth = [key_depth]
-            sys.stdout.write(json.dumps(versioner.read(file, key_depth)))
+
+            output = versioner.read(file, key_depth)
+            sys.stdout.write(output) if type(output) in [str, unicode] else sys.stdout.write(
+                json.dumps(output))
         except Exception, e:
             sys.exit(e)
 
