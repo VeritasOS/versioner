@@ -24,3 +24,9 @@ class Versioner(object):
         if not manager:
             raise Exception("Supported package managers {0}".format(PACKAGE_MANAGERS.keys()))
         return manager().read(file, key_depth)
+
+    def write(self, major, minor, patch,
+              file, key_depth):
+        manager = PACKAGE_MANAGERS.get(self.package_manager)
+        return manager().write(major, minor, patch,
+                               file, key_depth)
